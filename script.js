@@ -13,4 +13,26 @@ function createBubble(){
     },4000)
 }
 
-setInterval(createBubble,50);
+setInterval(createBubble,90);
+
+const myself=document.querySelector('.my-self');
+const switchBtn=document.querySelector('.switch-btn');
+const playBall=document.querySelector('.play');
+const stopBall=document.querySelector('.pause');
+
+playBall.addEventListener('click',()=>myFunc('play'));
+stopBall.addEventListener('click',()=>myFunc('stop'));
+
+const myFunc=(state)=>{
+if(state==='play'){
+    myself.classList.add('animate');
+    playBall.style.display='none';
+    stopBall.style.display='block';
+}
+else if(state==='stop'){
+    myself.classList.remove('animate');
+    playBall.style.display='block';
+    stopBall.style.display='none';
+}
+}
+
